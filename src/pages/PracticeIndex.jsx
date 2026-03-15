@@ -17,6 +17,20 @@ const topics = [
     icon: '📋',
     step: '02.',
   },
+  {
+    title: '고급 문제',
+    desc: '트라이, 세그먼트 트리, 유니온 파인드, AVL, B-트리 등 고급 자료구조와 알고리즘 문제입니다.',
+    path: '/practice/advanced',
+    icon: '🏆',
+    step: '03.',
+  },
+  {
+    title: '실전 문제',
+    desc: '실무 시나리오, 시스템 설계, 코딩 면접에서 자주 나오는 자료구조 활용 문제입니다.',
+    path: '/practice/real',
+    icon: '💼',
+    step: '04.',
+  },
 ];
 
 const PracticeIndex = () => {
@@ -26,7 +40,7 @@ const PracticeIndex = () => {
     <>
       <SEOHead
         title="연습문제 | DS Study"
-        description="자료구조 기초부터 중급까지, 단계별 연습문제로 실력을 점검하세요."
+        description="자료구조 기초부터 실전까지, 단계별 연습문제로 실력을 점검하세요."
       />
 
       <section className="page-header">

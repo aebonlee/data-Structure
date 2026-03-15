@@ -31,6 +31,8 @@ const SegmentTree = lazy(() => import('../pages/SegmentTree'));
 const UnionFind = lazy(() => import('../pages/UnionFind'));
 const PracticeBasic = lazy(() => import('../pages/PracticeBasic'));
 const PracticeInter = lazy(() => import('../pages/PracticeInter'));
+const PracticeAdvanced = lazy(() => import('../pages/PracticeAdvanced'));
+const PracticeReal = lazy(() => import('../pages/PracticeReal'));
 const References = lazy(() => import('../pages/References'));
 const LinearIndex = lazy(() => import('../pages/LinearIndex'));
 const NonlinearIndex = lazy(() => import('../pages/NonlinearIndex'));
@@ -102,6 +104,8 @@ const PublicLayout = () => {
             <Route path="/practice" element={<PracticeIndex />} />
             <Route path="/practice/basic" element={<PracticeBasic />} />
             <Route path="/practice/intermediate" element={<PracticeInter />} />
+            <Route path="/practice/advanced" element={<PracticeAdvanced />} />
+            <Route path="/practice/real" element={<PracticeReal />} />
 
             {/* References */}
             <Route path="/references" element={<References />} />

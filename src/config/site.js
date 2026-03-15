@@ -91,6 +91,8 @@ const site = {
       dropdown: [
         { path: '/practice/basic', labelKey: 'site.nav.practiceBasic' },
         { path: '/practice/intermediate', labelKey: 'site.nav.practiceInter' },
+        { path: '/practice/advanced', labelKey: 'site.nav.practiceAdvanced' },
+        { path: '/practice/real', labelKey: 'site.nav.practiceReal' },
       ]
     },
     { path: '/references', labelKey: 'site.nav.references', activePath: '/references' },

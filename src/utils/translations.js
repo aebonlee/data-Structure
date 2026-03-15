@@ -34,6 +34,8 @@ export const translations = {
         practice: '연습문제',
         practiceBasic: '기초 문제',
         practiceInter: '중급 문제',
+        practiceAdvanced: '고급 문제',
+        practiceReal: '실전 문제',
         references: '참고자료',
       },
       home: {
@@ -91,6 +93,8 @@ export const translations = {
         practice: 'Practice',
         practiceBasic: 'Basic Problems',
         practiceInter: 'Intermediate',
+        practiceAdvanced: 'Advanced',
+        practiceReal: 'Practical',
         references: 'References',
       },
       home: {

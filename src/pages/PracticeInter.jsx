@@ -192,7 +192,7 @@ const PracticeInter = () => {
 
             <div className="lesson-nav" data-aos="fade-up">
               <Link to="/practice/basic" className="lesson-nav-btn prev">&larr; 기초 문제</Link>
-              <Link to="/references" className="lesson-nav-btn next">참고자료 &rarr;</Link>
+              <Link to="/practice/advanced" className="lesson-nav-btn next">고급 문제 &rarr;</Link>
             </div>
 
           </div>
