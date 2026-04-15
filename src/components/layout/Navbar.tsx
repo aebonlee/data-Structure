@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useAuth } from '../../contexts/AuthContext';
 import site from '../../config/site';
 
 interface ColorOption {
@@ -39,6 +40,7 @@ const Navbar = (): React.ReactElement => {
   const location = useLocation();
   const { mode, toggleTheme, colorTheme, setColorTheme } = useTheme();
   const { language, toggleLanguage, t } = useLanguage();
+  const { isAuthenticated, logout, user } = useAuth();
 
   useEffect(() => {
     const handleScroll = (): void => setIsScrolled(window.scrollY > 50);
@@ -177,6 +179,26 @@ const Navbar = (): React.ReactElement => {
                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
               </svg>
             </button>
+            {isAuthenticated ? (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ fontSize: '13px', color: 'var(--text-secondary, #666)', maxWidth: '120px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {user?.email}
+                </span>
+                <button
+                  onClick={() => logout()}
+                  style={{ background: 'var(--primary-color, #0046C8)', color: '#fff', border: 'none', padding: '6px 14px', borderRadius: '6px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
+                >
+                  로그아웃
+                </button>
+              </div>
+            ) : (
+              <Link
+                to="/login"
+                style={{ background: 'var(--primary-color, #0046C8)', color: '#fff', textDecoration: 'none', padding: '6px 14px', borderRadius: '6px', fontSize: '13px', fontWeight: 600, whiteSpace: 'nowrap' }}
+              >
+                로그인
+              </Link>
+            )}
             <button
               className={`mobile-toggle ${isMobileMenuOpen ? 'active' : ''}`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
