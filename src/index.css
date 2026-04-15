@@ -2,6 +2,8 @@
    Data Structure Study - Main Stylesheet
    ============================================ */
 
+@import './styles/auth.css';
+@import './styles/admin.css';
 @import './styles/base.css';
 @import './styles/navbar.css';
 @import './styles/hero.css';

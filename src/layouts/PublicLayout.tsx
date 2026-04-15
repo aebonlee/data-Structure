@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
+import AdminGuard from '../components/AdminGuard';
 import useCodeCopy from '../hooks/useCodeCopy';
 import useTableScroller from '../hooks/useTableScroller';
 
@@ -40,6 +41,8 @@ const HashIndex = lazy(() => import('../pages/HashIndex'));
 const AlgorithmIndex = lazy(() => import('../pages/AlgorithmIndex'));
 const AdvancedIndex = lazy(() => import('../pages/AdvancedIndex'));
 const PracticeIndex = lazy(() => import('../pages/PracticeIndex'));
+const Login = lazy(() => import('../pages/Login'));
+const AdminDashboard = lazy(() => import('../pages/admin/AdminDashboard'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 
 const Loading = (): React.ReactElement => (
@@ -109,6 +112,10 @@ const PublicLayout = (): React.ReactElement => {
 
             {/* References */}
             <Route path="/references" element={<References />} />
+
+            {/* Auth */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/admin/dashboard/*" element={<AdminGuard><AdminDashboard /></AdminGuard>} />
 
             {/* 404 */}
             <Route path="*" element={<NotFound />} />
